@@ -1,6 +1,7 @@
 const colors = require('tailwindcss/colors')
 
 module.exports = {
+
   purge: { content: ['./public/**/*.html', './src/**/*.vue'] },
   presets: [],
   darkMode: false, // or 'media' or 'class'
@@ -15,7 +16,12 @@ module.exports = {
     colors: {
       transparent: 'transparent',
       current: 'currentColor',
-
+      dark:{
+        DEFAULT: '#333333'
+      },
+      lavenderLight:{
+        DEFAULT: '#E2EAFC'
+      },
       black: colors.black,
       white: colors.white,
       gray: colors.coolGray,
