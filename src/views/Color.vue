@@ -1,5 +1,14 @@
 <template>
-  <div class="about">
-    <h1>This is an about page</h1>
-  </div>
+  <Color />
 </template>
+<script>
+  import Color from '@/components/bases/baseColor.vue'
+
+export default {
+
+  components:{
+    Color
+  }
+}
+
+</script>
