@@ -1,9 +1,14 @@
 <template>
-  <Navbar>
+<div class="bg-lavenderLight min-h-screen">
+<Navbar/>
 
-  
+  <div class="flex justify-center">
   <router-view/>
-  </Navbar>
+
+    </div>
+</div>
+  
+
 
 </template>
 <script>
