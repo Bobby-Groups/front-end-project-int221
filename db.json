@@ -1,0 +1,14 @@
+{
+    "color": [
+        { "colorid": 1, "colorname": "red", "colorvalue": "#E74C3C" },
+        { "colorid": 2, "colorname": "green", "colorvalue": "#27AE60" },
+        { "colorid": 3, "colorname": "blue", "colorvalue": "#2E86C1" },
+        { "colorid": 4, "colorname": "purple", "colorvalue": "#8E44AD" },
+        { "colorid": 5, "colorname": "yello", "colorvalue": "#F4D03F" },
+        { "colorid": 6, "colorname": "grey", "colorvalue": "#707B7C" },
+        { "colorid": 7, "colorname": "black", "colorvalue": "#000" },
+        { "colorid": 8, "colorname": "white", "colorvalue": "#FFFF" },
+        { "colorid": 9, "colorname": "brown", "colorvalue": "#762400" }
+
+      ]
+}

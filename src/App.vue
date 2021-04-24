@@ -1,11 +1,24 @@
 <template>
-  <div id="nav">
-    <router-link to="/">Home</router-link> |
-    <router-link to="/about">About</router-link>
-  </div>
-  <router-view/>
-</template>
+<div class="bg-lavenderLight min-h-screen">
+<Navbar/>
 
+  <div class="flex justify-center">
+  <router-view/>
+
+    </div>
+</div>
+  
+
+
+</template>
+<script>
+import Navbar from '@/components/core/Navbar.vue'
+export default {
+  components:{
+    Navbar
+  }
+}
+</script>
 <style>
 #app {
   font-family: Avenir, Helvetica, Arial, sans-serif;
