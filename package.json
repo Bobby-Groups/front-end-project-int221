@@ -5,7 +5,8 @@
   "scripts": {
     "start": "vue-cli-service serve",
     "build": "vue-cli-service build",
-    "lint": "vue-cli-service lint"
+    "lint": "vue-cli-service lint",
+    "dummydb": "json-server --watch db.json --port 5000"
   },
   "dependencies": {
     "@tailwindcss/postcss7-compat": "^2.0.2",
