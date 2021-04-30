@@ -9,4 +9,4 @@ RUN npm run build
 FROM nginx:1.19.10-alpine
 ADD nginx.conf /etc/nginx/conf.d/default.conf
 COPY --from=build /my-app/dist /usr/share/nginx/html/src/
-EXPOSE 8080
+EXPOSE 80

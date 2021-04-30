@@ -1,12 +1,10 @@
 version: '3'
 services: 
-    hello-vue:
+    vueapp:
         build: .
-        ports: 
-            - 8080:8080
         container_name: vue-app
 
 networks:
-    defualt:
+    default:
         external: 
             name: intregrated-int221
