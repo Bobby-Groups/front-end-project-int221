@@ -3,7 +3,7 @@
 export default {
     data() {
         return {
-            API_URL: 'http://localhost:5000'
+            API_URL: 'http://23.98.77.87:5000'
         }
     },
     methods: {

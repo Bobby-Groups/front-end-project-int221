@@ -1,29 +1,52 @@
 <template>
-
-  <div class="grid grid-cols-3 grid-rows-5 gap-10 ml-48 mt-28">
-    <div v-for="color of colors" :key="color.id">
-      <button :style="{backgroundColor: color.colorvalue}" class="w-32 h-20 text-white">{{ color }}</button>
+  <div class="min-h-screen">
+    <div
+      class="grid grid-cols-3 grid-rows-3 ml-48 my-16 rounded-lg shadow-md bg-gray-300"
+    >
+      <div v-for="color of colors" :key="color.id">
+        <button
+          :style="{ backgroundColor: color.colorcode }"
+          @click="pickColor(color.colorcode)"
+          class="w-32 h-20 mx-5 my-10 text-white"
+        >
+          {{ color }}
+        </button>
+      </div>
     </div>
+
+    <router-link
+      to="/brand"
+      class="p-5 border-4 bg-black text-white rounded-xl min-h-screen"
+      >CONFIRM</router-link
+    >
   </div>
 </template>
 
 <script>
-export default {
+// import {mapActions} from 'vuex'
+// import { store } from './vuex/store.js'
 
+export default {
   data() {
     return {
-      colors : []
+      colors: [],
+      color: {
+        colorcode: "",
+      },
     };
   },
-  async created(){
-    this.colors = await this.fetchColor() 
-    console.log(this.colors);
+  async created() {
+    this.colors = await this.fetchColor();
   },
-  methods:{
-    async fetchColor(){
-       const { data } = await this.getData('color')
-       return data
-    }
-  }
+  methods: {
+    async fetchColor() {
+      const { data } = await this.getData("color");
+      return data;
+    },
+    pickColor(picked) {
+      this.$store.dispatch("addProduct", picked);
+      console.log(this.$store.state.products);
+    },
+  },
 };
 </script>

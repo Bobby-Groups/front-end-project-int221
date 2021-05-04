@@ -1,4 +1,5 @@
 <template>
+<div id="app">
 <div class="bg-lavenderLight min-h-screen">
 <Navbar/>
 
@@ -8,18 +9,24 @@
     </div>
 </div>
   
+</div>
+
 
 
 </template>
 <script>
 import Navbar from '@/components/core/Navbar.vue'
+
 export default {
   components:{
     Navbar
-  }
+  },
+
 }
+
 </script>
 <style>
+
 #app {
   font-family: Avenir, Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
