@@ -1,6 +1,6 @@
 <template>
 <div id="app">
-<div class="bg-lavenderLight min-h-screen">
+<div class="bg-lavenderLight min-h-screen flex flex-row overflow-hidden">
 <Navbar/>
 
   <div class="flex justify-center">
