@@ -4,13 +4,14 @@
       class="grid grid-cols-3 grid-rows-3 ml-48 my-16 rounded-lg shadow-md bg-gray-300"
     >
       <div v-for="color of colors" :key="color.id">
+        <div class="">
         <button
           :style="{ backgroundColor: color.colorcode }"
           @click="pickColor(color.colorcode)"
-          class="w-32 h-20 mx-5 my-10 text-white"
+          class="w-32 h-20 mx-5 my-10 text-white focus:outline-none focus:ring-2 focus:ring-purple-600 focus:border-transparent "
         >
-          {{ color }}
         </button>
+        </div>
       </div>
     </div>
 
