@@ -3,12 +3,13 @@
     rel="stylesheet"
     href="https://unpkg.com/boxicons@2.0.7/css/boxicons.min.css"
   />
-  <div class="mt-10">
-    <div class="p-3 bg-white rounded-xl max-w-max mr-10 ml-56">
-      <div class="flex justify-between w-full">
+
+  <div class="mt-20 ">
+    <div class="p-3 bg-white rounded-xl mr-5 ml-20">
+      <div class="flex justify-start">
         <img id="teamPic" src="../assets/TeamPhoto/boon.jpg" />
-        <div class="ml-8 p-3">
-          <h3 class="text-2xl">{{ FEName }}</h3>
+        <div class="ml-20 p-3">
+          <h3 class="text-2xl ">{{ FEName }}</h3>
           <br />
           {{ NoFE }}<br />
           Position : {{ positionBoon }}<br /><br />
@@ -27,10 +28,10 @@
       </div>
     </div>
 
-    <div class="p-3 bg-white rounded-xl max-w-max mt-10 ml-56">
-      <div class="flex justify-between w-full">
+    <div class="p-3 bg-white rounded-xl mr-5 ml-20 mt-10">
+      <div class="flex justify-start">
         <img id="teamPic" src="../assets/TeamPhoto/bird.jpg" />
-        <div class="ml-10 p-3">
+        <div class="ml-20 p-3">
           <h3 class="text-2xl">{{ BEName }}</h3>
           <br />
           {{ NoBE }}<br />
@@ -49,10 +50,10 @@
       </div>
     </div>
   </div>
-  <div class="mr-20">
-    <div>About team</div>
-  </div>
-  <div class="mt-10">
+
+    <div class="flex justify-items-center mr-5 font-mono text-3xl">About team</div>
+  
+  <div class="mt-20">
     <div class="p-3 bg-white rounded-xl max-w-max">
       <div class="flex justify-between w-full">
         <img id="teamPic" src="../assets/TeamPhoto/diz.jpg" />
@@ -101,7 +102,7 @@ export default {
 
 <style>
 #teamPic {
-  width: 320px;
+  width: 300px;
   height: 300px;
 }
 
