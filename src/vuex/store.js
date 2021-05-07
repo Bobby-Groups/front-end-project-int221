@@ -7,20 +7,61 @@ import Vuex from 'vuex'
 export default new Vuex.Store({
     state: {
         products:[],
-        colorcode:""
+        product: {
+        color:{},
+        brand:{
+            types:{
+                
+            }
+        },
+        images:"TOA_Acrylic.jpg",
+        date:"",
+        type_id:0
+        },
+        typeId:0
     },
     mutations: {
-        UPDATE_PRODUCT (state, payload) {
-            state.products.push(payload);
-          }
+        UPDATE_PRODUCT_COLOR (state, payload) {
+            state.product.color = payload
+          },
+          UPDATE_TYPEID(state,value){
+            state.product.type_id = value
+           //  console.log(state.typeId);
+           },
+          UPDATE_PRODUCT_BRAND_TYPE (state, payload) {
+            // state.products.push(payload2);
+            state.product.brand = payload
+
+            var today = new Date();
+            var dd = String(today.getDate()).padStart(2, '0');
+            var mm = String(today.getMonth() + 1).padStart(2, '0'); //January is 0!
+            var yyyy = today.getFullYear();
+            today = yyyy + '-' + mm + '-' + dd;
+            state.product.date = today
+            state.product.type_id = state.typeId
+          },
+          SET_PRODUCT(state){
+        //    state.product.id++
+           state.products.push(state.product)
+           
+        },
+     
     },
     actions:{
-        addProduct(context,value){
-            context.commit('UPDATE_PRODUCT',value)
+        addColor(context,value){
+            context.commit('UPDATE_PRODUCT_COLOR',value)
+        },
+        addBrandType(context,value1){
+            context.commit('UPDATE_PRODUCT_BRAND_TYPE',value1)
+        },
+        addProduct(context){
+            context.commit('SET_PRODUCT')
+        },
+        addTypeId(context,value){
+            context.commit('UPDATE_TYPEID',value)
         }
+
     },
-    getters: {
-        getColor: state => state.colorcode
-    }
+    
     
   })

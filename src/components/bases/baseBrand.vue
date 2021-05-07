@@ -1,56 +1,56 @@
 <template>
-  <div class="min-h-screen overflow-hidden">
-    <div class="flex flex-col ml-32">
-      <div v-for="brand of brands" :key="brand.id">
-        <div class="border-4">
-          <b>{{ brand.brandName }}</b>
-          <div class="flex flex-row">
-            <div
-              v-for="type of brand.types"
-              :key="type.id"
-              class="border-2 border-black p-4"
-            >
-              <table class="text-left text-xs">
-                <tr>
-                  <span> {{ type.typename }} </span>
-                </tr>
-                <tr>
-                  <img
-                    src="@/assets/TeamPhoto/bird.jpg"
-                    alt="bird"
-                    class="w-32 h-32"
-                  />
-                </tr>
-                <tr>
-                  <td>
-                    <div>Price: {{ type.price }}</div>
-                  </td>
-                </tr>
-                <tr>
-                  <td>
-                    <div class="w-40">description: {{ type.description }}</div>
-                  </td>
-                </tr>
-              </table>
-            </div>
-          </div>
+
+<div class="flex flex-col">
+  <div v-for="brand of brands" :key="brand.id" class="flex flex-col">
+    
+    <div class="flex flex-row">
+      <div>{{ brand.brandName }}</div>
+    </div>
+<div class="flex">
+      <div v-for="type of brand.types" :key="type.id" class="flex flex-col m-4">
+        <div class="flex flex-col max-h-screen max-w-md bg-white px-8 py-6 rounded-xl space-y-5 items-center">
+          <h3 class="font-serif font-bold text-gray-900 text-xl">
+            {{ type.typename }}
+          </h3>
+          <img
+            class="w-full rounded-md"
+            src="https://coffeeordie.com/wp-content/uploads/2019/03/FraserCOVER2.jpg"
+            alt="motivation"
+          />
+          <p class="text-left leading-relaxed">
+           {{ type.description }}
+         
+          </p>
+            <!-- <div :style="{ backgroundColor: brand.color.colorcode }" class="p-10"></div> -->
+          <span class="text-center">Price: {{type.price}}</span>
+          <router-link to="/total"
+            @click="pickBrandType(
+                brand.id,
+                brand.brandName,
+                type.id,
+                type.typename,
+                type.price,
+                type.description,
+              ); postProduct();"
+            class="px-24 py-4 bg-gray-900 rounded-md text-white text-sm focus:border-transparent"
+
+          >
+            Buy
+          </router-link>
         </div>
       </div>
-     
+</div>
     </div>
-     <router-link
-        to="/total"
-        class="p-5 border-4 bg-black text-white rounded-xl"
-        >CONFIRM</router-link
-      >
-  </div>
+    </div>
 </template>
 
 <script>
+
 export default {
   data() {
     return {
       brands: [],
+      
     };
   },
   async created() {
@@ -63,6 +63,43 @@ export default {
       const { data } = await this.getData("brand");
       return data;
     },
+    pickBrandType(
+      brandId,
+      brandName,
+      typeId,
+      typeName,
+      typePrice,
+      typeDescrip
+    ) {
+     
+      let brand = {
+        types: [
+          {
+            id: typeId,
+            typename: typeName,
+            price: typePrice,
+            description: typeDescrip,
+          },
+        ],
+        id: brandId,
+        brandName: brandName,
+      };
+      this.$store.dispatch("addBrandType", brand);
+      this.$store.dispatch("addTypeId",typeId)
+      this.$store.dispatch("addProduct");
+      
+    },
+    async postProduct() {
+      let data = await this.$store.state.product;
+      const res = this.postData("product", data);
+      console.log(res.status);
+      if (res.status === 200) {
+        console.log("SUCCESS: " + await this.$store.state.products);
+      }
+    },
   },
 };
 </script>
+
+<style>
+</style>

@@ -7,7 +7,7 @@
         <div class="">
         <button
           :style="{ backgroundColor: color.colorcode }"
-          @click="pickColor(color.colorcode)"
+          @click="pickColor(color.id,color.colorcode,color.colorName)"
           class="w-32 h-20 mx-5 my-10 text-white focus:outline-none focus:ring-2 focus:ring-purple-600 focus:border-transparent "
         >
         </button>
@@ -44,9 +44,15 @@ export default {
       const { data } = await this.getData("color");
       return data;
     },
-    pickColor(picked) {
-      this.$store.dispatch("addProduct", picked);
-      console.log(this.$store.state.products);
+    pickColor(colorId,colorcode,colorName) {
+      let color = {
+        colorcode: colorcode,
+        id: colorId,
+        colorName: colorName
+      }
+      
+      this.$store.dispatch("addColor", color);
+      console.log(this.$store.state.product);
     },
   },
 };

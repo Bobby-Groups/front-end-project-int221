@@ -3,10 +3,11 @@
 <div class="bg-lavenderLight min-h-screen flex flex-row overflow-hidden">
 <Navbar/>
 
-  <div class="flex justify-center">
+  <div class="flex justify-center flex-col">
   <router-view/>
 
     </div>
+
 </div>
   
 </div>
