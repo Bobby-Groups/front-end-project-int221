@@ -33,54 +33,6 @@
       </div>
     </div>
   </div>
-    <!-- <div class="p-3 bg-white rounded-xl max-w-max mt-10 ml-56">
-      <div class="flex justify-between w-full">
-        <img id="teamPic" src="../assets/TeamPhoto/bird.jpg" />
-        <div class="ml-10 p-3">
-          <h3 class="text-2xl">{{ BEName }}</h3>
-          <br />
-          {{ NoBE }}<br />
-          Position : {{ positionBird }}<br /><br />
-          <div id="icon" class="mr-20 mb-10">
-          <a href="https://www.facebook.com/konseaw"
-            ><img id="icon" src="../assets/facebook.png"
-          /> </a>
-        </div>
-        <div id="icon">
-          <a href="https://www.instagram.com/b_birdsrp/"
-            ><img id="icon" src="../assets/instagram.png"
-          /></a> 
-        </div>
-        </div>
-      </div>
-    </div>
-  </div>
- 
-  <div class="mt-10">
-    <div class="p-3 bg-white rounded-xl max-w-max">
-      <div class="flex justify-between w-full">
-        <img id="teamPic" src="../assets/TeamPhoto/diz.jpg" />
-        <div class="ml-10 p-3">
-          <h3 class="text-2xl">{{ DOName }}</h3>
-          <br />
-          {{ NoDO }}<br />
-          Position : {{ positionDiz }}<br /><br />
-
-          <div id="icon" class="mr-20 mb-10">
-          <a href="https://www.facebook.com/dit.forward/"
-            ><img id="icon" src="../assets/facebook.png"
-          /> </a>
-        </div>
-        <div id="icon">
-          <a href="https://www.instagram.com/dlzzappear/"
-            ><img id="icon" src="../assets/instagram.png"
-          /></a> 
-        </div>
-            
-        </div>
-      </div>
-    </div>
-  </div> -->
   </div>
 </template>
 
