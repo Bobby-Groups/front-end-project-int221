@@ -18,7 +18,8 @@ export default new Vuex.Store({
         date:"",
         type_id:0
         },
-        typeId:0
+        typeId:0,
+        img: ""
     },
     mutations: {
         UPDATE_PRODUCT_COLOR (state, payload) {
@@ -28,6 +29,9 @@ export default new Vuex.Store({
             state.product.type_id = value
            //  console.log(state.typeId);
            },
+           UPDATE_IMAGE(state,payload){
+            state.product.images = payload
+        },
           UPDATE_PRODUCT_BRAND_TYPE (state, payload) {
             // state.products.push(payload2);
             state.product.brand = payload
@@ -38,6 +42,7 @@ export default new Vuex.Store({
             var yyyy = today.getFullYear();
             today = yyyy + '-' + mm + '-' + dd;
             state.product.date = today
+            // state.product.images = state.img
             state.product.type_id = state.typeId
           },
           SET_PRODUCT(state){
@@ -45,6 +50,7 @@ export default new Vuex.Store({
            state.products.push(state.product)
            
         },
+        
      
     },
     actions:{
@@ -59,6 +65,9 @@ export default new Vuex.Store({
         },
         addTypeId(context,value){
             context.commit('UPDATE_TYPEID',value)
+        },
+        addImage(context,value){
+            context.commit('UPDATE_IMAGE',value)
         }
 
     },

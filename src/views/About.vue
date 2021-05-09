@@ -4,7 +4,7 @@
     href="https://unpkg.com/boxicons@2.0.7/css/boxicons.min.css"
   />
   <div class="flex flex-row" v-for="myteam of team" :key="myteam.id">
-  <div class="mt-10 min-w-full">
+  <div class="mt-10 mx-10 min-w-full">
     <div class="p-3 bg-white rounded-xl">
       <div class="flex justify-between w-full">
         <img id="teamPic" :src="myteam.img" />
