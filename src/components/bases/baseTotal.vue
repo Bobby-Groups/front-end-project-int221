@@ -1,5 +1,5 @@
 <template>
-  <div class="flex flex-row min-h-screen">
+  <div class="flex flex-row min-h-screen ml-12">
     <div class="grid grid-cols-3 gap-4">
   <div v-for="product of userProducts" :key="product.id" class="">
     <div class="flex flex-col m-4">
@@ -18,7 +18,7 @@
             </p>
             <div
               :style="{ backgroundColor: product.color.colorcode }"
-              class="p-5 ml-5 border-black border-2"
+              class="p-4 ml-5 border-black border-2"
             ></div>
           </div>
           <!-- <div v-for="p of price" :key="p"> -->
@@ -28,7 +28,7 @@
           <p>Price: {{ product.type_price }} bath</p>  
           <p>Date: {{ product.date }}</p>
         </div>
-        <Button msg="delete" @click="deleteProduct"></Button>
+        <Button msg="delete" @click="deleteProduct(product.id)"></Button>
         <!-- </div> -->
         <!-- <div :style="{ backgroundColor: brand.color.colorcode }" class="p-10"></div> -->
       </div>
@@ -36,8 +36,15 @@
   </div>
   </div>
   </div>
-  <footer class="bg-indigo-600 text-black text-2xl p-8">
-    Total: {{totalPrice}}
+  <footer class="bg-indigo-600 text-black text-2xl p-8 w-screen flex justify-center">
+    <div class="flex flex-row">
+    <div>
+      Total: {{totalPrice}} 
+    </div>
+    <div class="mx-5">
+      <router-link to="color" msg="Buy More" class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded">Buy More</router-link>
+    </div>
+    </div>
   </footer>
 </template>
 
@@ -75,8 +82,8 @@ export default {
       }
       return data;
     },
-    deleteProduct(){
-
+    deleteProduct(id){
+      this.deleteData('product',id)
     }
     
   },

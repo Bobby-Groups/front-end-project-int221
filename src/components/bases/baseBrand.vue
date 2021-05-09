@@ -1,28 +1,31 @@
 <template>
 
-<div class="flex flex-col">
+<div class="flex flex-col ml-10">
   <div v-for="brand of brands" :key="brand.id" class="flex flex-col">
     
-    <div class="flex flex-row">
+    <div class="flex flex-row text-lg font-black">
       <div>{{ brand.brandName }}</div>
     </div>
 <div class="flex">
       <div v-for="type of brand.types" :key="type.id" class="flex flex-col m-4">
-        <div class="flex flex-col max-h-screen max-w-md bg-white px-8 py-6 rounded-xl space-y-5 items-center">
+        <div class="flex flex-col min-h-screen bg-white px-8 py-6 rounded-xl space-y-5 items-center">
           <h3 class="font-serif font-bold text-gray-900 text-xl">
             {{ type.typename }}
           </h3>
           <img
             class="w-full rounded-md"
-            src="https://coffeeordie.com/wp-content/uploads/2019/03/FraserCOVER2.jpg"
+            :src="`${`http://23.98.77.87/backend/brandimg/`}`+brand.id"
             alt="motivation"
           />
-          <p class="text-left leading-relaxed">
+          <div>
+ <p class="text-left leading-relaxed text-sm">
            {{ type.description }}
-         
           </p>
+          </div>
+         
             <!-- <div :style="{ backgroundColor: brand.color.colorcode }" class="p-10"></div> -->
           <span class="text-center">Price: {{type.price}}</span>
+          <div>
           <router-link to="/total"
             @click="pickBrandType(
                 brand.id,
@@ -31,12 +34,15 @@
                 type.typename,
                 type.price,
                 type.description,
+                brand.images,
+
               ); postProduct();"
             class="px-24 py-4 bg-gray-900 rounded-md text-white text-sm focus:border-transparent"
 
           >
             Buy
           </router-link>
+          </div>
         </div>
       </div>
 </div>
@@ -69,7 +75,8 @@ export default {
       typeId,
       typeName,
       typePrice,
-      typeDescrip
+      typeDescrip,
+      images
     ) {
      
       let brand = {
@@ -83,16 +90,19 @@ export default {
         ],
         id: brandId,
         brandName: brandName,
+        images: images
       };
+      console.log(brand.images);
       this.$store.dispatch("addBrandType", brand);
       this.$store.dispatch("addTypeId",typeId)
+      this.$store.dispatch("addImage",brand.images)
       this.$store.dispatch("addProduct");
       
     },
     async postProduct() {
       let data = await this.$store.state.product;
       const res = this.postData("product", data);
-      console.log(res.status);
+      // console.log(res.status);
       if (res.status === 200) {
         console.log("SUCCESS: " + await this.$store.state.products);
       }
@@ -102,4 +112,8 @@ export default {
 </script>
 
 <style>
+img{
+  height: 15rem;
+  width: 7rem;
+}
 </style>
