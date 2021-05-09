@@ -1,9 +1,9 @@
 <template>
 <div id="app">
-<div class="bg-lavenderLight min-h-screen flex flex-row overflow-hidden">
+<div class="bg-lavenderLight min-h-screen flex flex-row overflow-hidden overflow-x-scroll">
 <Navbar/>
 
-  <div class="flex justify-center flex-col">
+  <div>
   <router-view/>
 
     </div>
