@@ -29,13 +29,20 @@ export default {
                 console.log(e);
             }
         },
-        async deleteData(api){
+        async deleteData(api,data){
             try{
-                return await this.axios.delete(`${this.API_URL}/${api}`)
+                return await this.axios.delete(`${this.API_URL}/${api}/`+data)
             } catch(e){
                 console.log(e);
             }
-        }
+        },
+        async putData(api,id,data){
+            try{
+                return await this.axios.put(`${this.API_URL}/${api}/`+id,data)
+            }catch(e){
+                console.log(e);
+            }
+        } 
     }
 }
 
