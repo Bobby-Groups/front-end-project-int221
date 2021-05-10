@@ -1,25 +1,33 @@
 <template>
-<div class="bg-lavenderLight min-h-screen">
+<div id="app">
+<div class="bg-lavenderLight flex flex-row overflow-hidden overflow-x-scroll">
 <Navbar/>
 
-  <div class="flex justify-center">
+  <div>
   <router-view/>
 
     </div>
+
 </div>
   
+</div>
+
 
 
 </template>
 <script>
 import Navbar from '@/components/core/Navbar.vue'
+
 export default {
   components:{
     Navbar
-  }
+  },
+
 }
+
 </script>
 <style>
+
 #app {
   font-family: Avenir, Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;

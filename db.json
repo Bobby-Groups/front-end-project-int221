@@ -11,4 +11,8 @@
         { "colorid": 9, "colorname": "brown", "colorvalue": "#762400" }
 
       ]
+      ,
+      "product": [
+        {"brandid": 1, "colorid": "#8E44AD","id":1}
+      ]
 }

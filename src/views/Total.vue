@@ -1,10 +1,11 @@
 <template>
-
-    <h1>total</h1>
-    <h1>total</h1>
-    <h1>total</h1>
-    <h1>total</h1>
-    <h1>total</h1>
-
-
+    <Total/>
 </template>
+<script>
+import Total from '@/components/bases/baseTotal.vue'
+export default {
+    components:{
+        Total
+    }
+}
+</script>
