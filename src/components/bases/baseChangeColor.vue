@@ -42,7 +42,7 @@
     </div>
 
     <div class="mx-1 sm:flex sm:justify-start sm:ml-60 sm:mt-5">
-      <input type="submit" value="Submit" />
+      <input type="submit" value="Submit" class="cursor-pointer" />
     </div>
     <div class="flex flex-col mx-5 text-left">
       <span v-if="errors.length">
