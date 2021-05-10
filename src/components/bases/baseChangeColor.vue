@@ -6,8 +6,12 @@
     "
     class="lg:flex lg:flex-col md:flex md:flex-col sm:flex sm:flex-col"
   >
-    <div class="lg:flex md:flex-row md:flex lg:flex-row sm:flex sm:justify-start sm:mb-3">
-    <label for="newName" class="mx-2 sm:flex sm:justify-start sm:mr-11">Color: </label>
+    <div
+      class="lg:flex md:flex-row md:flex lg:flex-row sm:flex sm:justify-start sm:mb-3"
+    >
+      <label for="newName" class="mx-2 sm:flex sm:justify-start sm:mr-11"
+        >Color:
+      </label>
 
       <select
         name="selectColor"
@@ -35,7 +39,6 @@
         <label class="mx-2">Color code:</label>
         <input type="text" v-model="colorCode" name="colorCode" />
       </div>
-     
     </div>
 
     <div class="mx-1 sm:flex sm:justify-start sm:ml-60 sm:mt-5">
@@ -54,19 +57,11 @@
         </ul>
       </span>
     </div>
-    <!-- <Button msg="Brand" @click="putBrand(colors,newName,colorId)"/> -->
   </form>
-  <!-- <span>{{colorId}} </span>
-    <span>{{newName}}</span> -->
 </template>
 
 <script>
-// import Button from '../core/Button.vue'
-
 export default {
-  components: {
-    // Button
-  },
   data() {
     return {
       colors: [],
@@ -97,19 +92,12 @@ export default {
         this.isColorId === true &&
         this.isColorCode === true
       ) {
-        console.log(color);
-        console.log(newName);
-        console.log(code);
-let newColor = {
-    colorName: newName,
-    id: parseInt(id),
-    colorcode: code
-}
-color = newColor
-        // color.colorName = newName;
-        // color.id = parseInt(id);
-        // color.colorcode = code;
-        console.log(color);
+        let newColor = {
+          colorName: newName,
+          id: parseInt(id),
+          colorcode: code,
+        };
+        color = newColor;
 
         await this.putData("color", id, color);
       }

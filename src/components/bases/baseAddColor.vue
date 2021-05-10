@@ -31,17 +31,12 @@
      
 
     
-    <!-- <Button msg="Confirm" @click="addColor(colorName,colorCode)"></Button> -->
   </form>
 </template>
 
 <script>
-// import Button from "../core/Button.vue";
 
 export default {
-  components: {
-    // Button,
-  },
   data() {
     return {
       colorName: "",

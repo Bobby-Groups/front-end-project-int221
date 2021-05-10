@@ -25,7 +25,6 @@
           </div>
           <p class="text-center">Price: {{type.price}}</p>
          
-            <!-- <div :style="{ backgroundColor: brand.color.colorcode }" class="p-10"></div> -->
           <div>
             
           <router-link to="/total"
@@ -104,7 +103,6 @@ export default {
     async postProduct() {
       let data = await this.$store.state.product;
       const res = this.postData("product", data);
-      // console.log(res.status);
       if (res.status === 200) {
         console.log("SUCCESS: " + await this.$store.state.products);
       }

@@ -21,7 +21,6 @@
               class="p-4 ml-5 border-black border-2"
             ></div>
           </div>
-          <!-- <div v-for="p of price" :key="p"> -->
           <p>Brand: {{ product.brand.brandName }}</p>
           <p>Type: {{ product.type_name }}</p>
 
@@ -29,8 +28,6 @@
           <p>Date: {{ product.date }}</p>
         </div>
         <Button msg="delete" @click="deleteProduct(product.id)"></Button>
-        <!-- </div> -->
-        <!-- <div :style="{ backgroundColor: brand.color.colorcode }" class="p-10"></div> -->
       </div>
     </div>
   </div>
@@ -98,6 +95,5 @@ export default {
   }
   
 
-  // },
 };
 </script>

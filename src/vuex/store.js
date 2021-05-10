@@ -1,8 +1,6 @@
-// import Vue from 'vue'
 import Vuex from 'vuex'
 
 
-// Vue.use(Vuex)
 
 export default new Vuex.Store({
     state: {
@@ -27,13 +25,11 @@ export default new Vuex.Store({
           },
           UPDATE_TYPEID(state,value){
             state.product.type_id = value
-           //  console.log(state.typeId);
            },
            UPDATE_IMAGE(state,payload){
             state.product.images = payload
         },
           UPDATE_PRODUCT_BRAND_TYPE (state, payload) {
-            // state.products.push(payload2);
             state.product.brand = payload
 
             var today = new Date();
@@ -42,11 +38,9 @@ export default new Vuex.Store({
             var yyyy = today.getFullYear();
             today = yyyy + '-' + mm + '-' + dd;
             state.product.date = today
-            // state.product.images = state.img
             state.product.type_id = state.typeId
           },
           SET_PRODUCT(state){
-        //    state.product.id++
            state.products.push(state.product)
            
         },
@@ -57,8 +51,8 @@ export default new Vuex.Store({
         addColor(context,value){
             context.commit('UPDATE_PRODUCT_COLOR',value)
         },
-        addBrandType(context,value1){
-            context.commit('UPDATE_PRODUCT_BRAND_TYPE',value1)
+        addBrandType(context,value){
+            context.commit('UPDATE_PRODUCT_BRAND_TYPE',value)
         },
         addProduct(context){
             context.commit('SET_PRODUCT')

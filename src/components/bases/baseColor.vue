@@ -22,8 +22,6 @@
 </template>
 
 <script>
-// import {mapActions} from 'vuex'
-// import { store } from './vuex/store.js'
 export default {
   
   data() {
