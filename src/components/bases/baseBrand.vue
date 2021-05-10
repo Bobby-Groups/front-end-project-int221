@@ -1,31 +1,33 @@
 <template>
 
 <div class="flex flex-col ml-10">
-  <div v-for="brand of brands" :key="brand.id" class="flex flex-col">
+  <div v-for="brand of brands" :key="brand.id" class="flex flex-col lg:w-2/3">
     
     <div class="flex flex-row text-lg font-black">
       <div>{{ brand.brandName }}</div>
     </div>
 <div class="flex">
-      <div v-for="type of brand.types" :key="type.id" class="flex flex-col m-4">
-        <div class="flex flex-col min-h-screen bg-white px-8 py-6 rounded-xl space-y-5 items-center">
+      <div v-for="type of brand.types" :key="type.id" class="flex flex-col my-6 mx-1">
+        <div class="flex flex-col w-11/12 h-full bg-white px-8 py-6 rounded-xl space-y-5 items-center">
           <h3 class="font-serif font-bold text-gray-900 text-xl">
             {{ type.typename }}
           </h3>
           <img
-            class="w-full rounded-md"
+            class="lg:w-8/12 md:w-8/12 rounded-md"
             :src="`${`http://23.98.77.87/backend/brandimg/`}`+brand.id"
             alt="motivation"
           />
           <div>
- <p class="text-left leading-relaxed text-sm">
+ <p class="text-left leading-relaxed text-sm whitespace-normal">
            {{ type.description }}
           </p>
+
           </div>
+          <p class="text-center">Price: {{type.price}}</p>
          
             <!-- <div :style="{ backgroundColor: brand.color.colorcode }" class="p-10"></div> -->
-          <span class="text-center">Price: {{type.price}}</span>
           <div>
+            
           <router-link to="/total"
             @click="pickBrandType(
                 brand.id,
@@ -111,9 +113,4 @@ export default {
 };
 </script>
 
-<style>
-img{
-  height: 15rem;
-  width: 7rem;
-}
-</style>
+

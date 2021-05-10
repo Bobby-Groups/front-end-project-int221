@@ -1,5 +1,5 @@
 <template>
-  <div class="flex flex-col">
+  <div class="flex flex-col ml-10">
     <div class="flex flex-col" id="crop">
          <div class="flex justify-start mb-5" >
         <p class="font-bold">Change Image</p>
@@ -11,7 +11,7 @@
     </div>
     <div class="flex flex-col" id="crop">
 
-      <div class="flex justify-start mb-5" >
+      <div class="lg:flex lg:flex-row sm:flex sm:justify-start mb-5" >
         <p class="font-bold">Change Color</p>
       </div>
 

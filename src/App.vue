@@ -1,6 +1,6 @@
 <template>
 <div id="app">
-<div class="bg-lavenderLight min-h-screen flex flex-row overflow-hidden overflow-x-scroll">
+<div class="bg-lavenderLight flex flex-row overflow-hidden overflow-x-scroll">
 <Navbar/>
 
   <div>

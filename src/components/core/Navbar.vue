@@ -5,7 +5,7 @@
   <div class="flex flex-col w-auto bg-dark rounded-r-3xl overflow-hidden">
       
     <div class="flex items-center justify-center h-20 shadow-md p-5">
-      <h1 class="text-3xl uppercase text-indigo-500">HousePaintto</h1>  </div>
+      <h1 class="lg:text-xl md:text-sm sm:text-sm uppercase text-indigo-500">HousePaintto</h1>  </div>
     <ul class="flex flex-col py-4">
       <li>
         <router-link to ="/" class="flex flex-row items-center h-12 transform hover:translate-x-2 transition-transform ease-in duration-200 text-white hover:text-gray-500">

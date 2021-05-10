@@ -4,20 +4,21 @@
       checkForm();
       addColor(colorName, colorCode);
     "
- class="flex flex-row" >
- <div class="flex flex-row">
-    <div>
-      <span class="mx-2">Color name:</span>
-      <input type="text" v-model="colorName" />
+ class="lg:flex lg:flex-col" >
+ <div class="lg:flex lg:flex-col md:flex md:flex-col">
+    <div class="sm:flex sm:justify-start lg:flex lg:flex-row">
+      <label class="mr-2">Color name:</label>
+      <input type="text" v-model="colorName"  class="sm:mb-3 lg:mb-3"/>
     </div>
-    <div>
-      <span class="mx-2">Color code:</span>
-      <input type="text" v-model="colorCode" />
+    <div class="sm:flex sm:justify-start lg:flex lg:flex-row">
+      <label class="mr-3">Color code:</label>
+      <input type="text" v-model="colorCode" class="lg:mb-0"/>
     </div>
-    <div>
-      <input type="submit" value="Submit" />
+    <div >
+      <input type="submit" value="Submit" class="sm:flex sm:justify-start sm:mt-5 sm:ml-60 md:ml-60 lg:ml-60"/>
     </div>
 </div>
+
 <div class="mx-5 text-left">
 <span v-if="errors.length">
         <ul>

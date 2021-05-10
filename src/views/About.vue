@@ -1,31 +1,27 @@
 <template>
-  <link
-    rel="stylesheet"
-    href="https://unpkg.com/boxicons@2.0.7/css/boxicons.min.css"
-  />
-  <div class="flex flex-row" v-for="myteam of team" :key="myteam.id">
-  <div class="mt-10 mx-10 min-w-full">
-    <div class="p-3 bg-white rounded-xl">
-      <div class="flex justify-between w-full">
-        <img id="teamPic" :src="myteam.img" />
+  <div v-for="myteam of team" :key="myteam.id" class="ml-1">
+  <div class="lg:my-10 lg:mx-10 md:my-10 sm:my-10">
+    <div class="p-3 bg-white rounded-xl lg:w-4/5 lg:h-full md:w-full sm:w-full h-full">
+      <div class="flex flew-row">
+        <img :src="myteam.img" class="lg:w-1/3 md:w-1/2 sm:w-5/12"/>
         <div class="ml-8 p-3">
           <div class="flex flex-col text-left my-3">
-          <h3 class="text-2xl">{{myteam.name}}</h3>
-         <div>
+          <h3 class="lg:text-2xl md:text-xl sm:text-sm">{{myteam.name}}</h3>
+         <div class="lg:text-2xl md:text-xl sm:text-sm">
            Student ID : {{myteam.stdId }}
            </div> 
-         <div>
+         <div class="lg:text-2xl md:text-xl sm:text-sm">
           Position : {{myteam.pos}}
            </div>
          </div>
-         <div class="flex flex-row mt-10">
-          <div id="icon" class="mr-20 mb-10">
+         <div class="flex flex-row lg:mt-10">
+          <div class="mr-20 mb-10">
           <a :href="myteam.fb"
-            ><img id="icon" src="../assets/facebook.png"/></a>
+            ><img class="w-10" src="../assets/facebook.png"/></a>
         </div>
         <div id="icon">
           <a :href="myteam.ig"
-            ><img id="icon" src="../assets/instagram.png"
+            ><img class="w-10" src="../assets/instagram.png"
           /></a> 
         </div>
         </div>
@@ -54,7 +50,7 @@ export default {
           name:"Surapong Chamarai",
           stdId:"62130500100",
           pos:"Back-end, Database",
-          img:"https://scontent.fbkk8-4.fna.fbcdn.net/v/t1.6435-9/84675282_1311353869051315_8953544667853488128_n.jpg?_nc_cat=100&ccb=1-3&_nc_sid=cdbe9c&_nc_eui2=AeEidVU8l6dZjmRrYrTC8HIrrIJmOCsON-6sgmY4Kw437je2eqGcbTz1dzSBtykjdtECSUiYwXupS2G8TwqFrsCw&_nc_ohc=0zi3puhx0m4AX-4LzmQ&_nc_ht=scontent.fbkk8-4.fna&oh=56f78b919ebafb8ea5d06c882b559ca6&oe=60BCEECB",
+          img:"https://scontent.fbkk12-4.fna.fbcdn.net/v/t1.18169-9/15965176_1175317199255422_7805047654377926282_n.jpg?_nc_cat=110&ccb=1-3&_nc_sid=174925&_nc_eui2=AeGsplvRW-XU9vq80b94o2OaayVs_54NtMdrJWz_ng20x9EYH72cza6pzBwizIrlhMVYI4TJYBDu-z7cvcxjdMYC&_nc_ohc=DUg9GpixTWAAX_FwReR&_nc_ht=scontent.fbkk12-4.fna&oh=7286dc59645fa041b92ed5e5a0470609&oe=60BF85C7",
            fb: 'https://www.facebook.com/dit.forward',
           ig: 'https://www.instagram.com/dlzzappear/',
           id:2

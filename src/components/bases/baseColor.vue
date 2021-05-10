@@ -1,13 +1,13 @@
 <template>
     <div
-      class="grid grid-cols-3 grid-rows-3 my-16 rounded-lg shadow-md bg-white"
+      class="lg:grid lg:grid-cols-6 my-16 md:grid md:grid-cols-3 sm:grid sm:grid-cols-3 shadow-md bg-white"
     >
       <div v-for="color of colors" :key="color.id">
         <div class="">
         <button
           :style="{ backgroundColor: color.colorcode }"
           @click="pickColor(color.id,color.colorcode,color.colorName)"
-          class="w-32 h-20 mx-5 my-10 text-white focus:outline-none focus:ring-2 focus:ring-purple-600 focus:border-transparent "
+          class="lg:w-30 lg:h-20 md:w-28 md:h-16 sm:w-16 sm:h-10 lg:mx-5 lg:my-10 md:mx-4 md:my-8 sm:mx-3 sm:my-6 text-white focus:outline-none focus:ring-2 focus:ring-purple-600 focus:border-transparent "
         >
         </button>
 

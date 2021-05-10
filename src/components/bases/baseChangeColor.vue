@@ -4,10 +4,11 @@
       checkForm();
       putColor(colors[colorId - 1], newName, colorId, colorCode);
     "
-    class="flex flex-row"
+    class="lg:flex lg:flex-col md:flex md:flex-col sm:flex sm:flex-col"
   >
-    <label for="newName" class="mx-2">Color: </label>
-    <div class="flex flex-col">
+    <div class="lg:flex md:flex-row md:flex lg:flex-row sm:flex sm:justify-start sm:mb-3">
+    <label for="newName" class="mx-2 sm:flex sm:justify-start sm:mr-11">Color: </label>
+
       <select
         name="selectColor"
         v-model="colorId"
@@ -25,14 +26,19 @@
         </option>
       </select>
     </div>
-    <div>
-      <label for="newName" class="mx-2">New name:</label>
-      <input type="text" v-model="newName" name="newName" />
-      <label class="mx-2">Color code:</label>
-      <input type="text" v-model="colorCode" name="colorCode" />
+    <div class="md:flex md:flex-col">
+      <div class="sm:flex sm:justify-start">
+        <label for="newName" class="mx-2">New name:</label>
+        <input type="text" v-model="newName" name="newName" />
+      </div>
+      <div class="sm:flex sm:justify-start sm:mt-3">
+        <label class="mx-2">Color code:</label>
+        <input type="text" v-model="colorCode" name="colorCode" />
+      </div>
+     
     </div>
 
-    <div>
+    <div class="mx-1 sm:flex sm:justify-start sm:ml-60 sm:mt-5">
       <input type="submit" value="Submit" />
     </div>
     <div class="flex flex-col mx-5 text-left">

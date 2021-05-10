@@ -1,17 +1,17 @@
 <template>
-  <div class="flex flex-row min-h-screen ml-12">
-    <div class="grid grid-cols-3 gap-4">
+  <div class="flex flex-row min-h-screen min-w-screen overflow-x-hidden ml-12 md:ml-10 sm:ml-1">
+    <div class="lg:grid lg:grid-cols-3 lg:gap-4 md:grid md:grid-cols-2 md:gap-3 sm:grid sm:grid-cols-2 sm:gap-0">
   <div v-for="product of userProducts" :key="product.id" class="">
-    <div class="flex flex-col m-4">
+    <div class="flex flex-col m-3">
       <div
-        class="flex flex-col max-h-screen max-w-md bg-white px-8 py-6 rounded-xl space-y-5 items-center"
+        class="flex flex-col bg-white px-8 py-6 rounded-xl space-y-5 items-center"
       >
         <img
-          class="w-48 h-48 rounded-md border-gray-400 border-2"
+          class="lg:w-48 lg:h-48 md:w-40 md:h-36 sm:w-32 sm:h-28 rounded-md border-gray-400 border-2"
           :src="`${`http://23.98.77.87/backend/brandimg/`}`+product.brand.id"
           alt="motivation"
         />
-        <div class="text-left">
+        <div class="text-left sm:text-sm">
           <div class="flex flex-row text-left">
             <p class="leading-relaxed mt-2">
               Color: {{ product.color.colorName }}
