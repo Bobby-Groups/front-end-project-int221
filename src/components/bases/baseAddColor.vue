@@ -15,7 +15,7 @@
       <input type="text" v-model="colorCode" class="lg:mb-0"/>
     </div>
     <div >
-      <input type="submit" value="Submit" class="sm:flex sm:justify-start sm:mt-5 sm:ml-60 md:ml-60 lg:ml-60"/>
+      <input type="submit" value="Submit" class="sm:flex sm:justify-start sm:mt-5 sm:ml-60 md:ml-60 lg:ml-60 cursor-pointer"/>
     </div>
 </div>
 

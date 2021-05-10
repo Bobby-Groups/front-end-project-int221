@@ -21,8 +21,7 @@ import Navbar from '@/components/core/Navbar.vue'
 export default {
   components:{
     Navbar
-  },
-
+  }
 }
 
 </script>
